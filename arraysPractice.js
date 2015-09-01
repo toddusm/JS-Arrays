@@ -195,7 +195,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
-
+function addTen(numbers){
+  var arr = [];
+  for(var i = 0; i < numbers.length; i++) {
+    if(numbers[i] != NaN){
+    arr.push(numbers[i] + 10);
+    } else if (numbers[i] === NaN){
+      arr.push((numbers[i] * 1) + 10));
+    }
+  }
+};
 
 
 //Next Problem
@@ -216,7 +225,13 @@ for(var i = 0; i < num2; i++){
 //Write a function that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
   //Code Here
-
+function longest(arr1, arr2){
+  if(arr1.length > arr2.length) {
+    return arr1 + "This is arr1";
+  } else if(arr1.length < arr2.length) {
+    return arr2 + "This is arr2";
+  };
+}
 
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example)
@@ -224,7 +239,16 @@ for(var i = 0; i < num2; i++){
 */
 
   //Code Here
-  
+  function both(arr1, arr2){
+    var arr = [];
+    for(var i = 0; i < arr1.length; i++) {
+      arr.push(arr1[i]);
+    };
+    for(var i = 0; i < arr2.length; i++){
+      arr.push(arr2[i]);
+    }
+    return arr;
+  }
   
   
 
@@ -264,13 +288,34 @@ array with those four objects. After that console.log the length of the Array an
 sure that it's equal to 4. */
 
   //Code Here
-
+function addTeam(obj){
+  return devMountainEmployees.push(obj);
+}
+addTeam(tyler);
+addTeam(cahlan);
+addTeam(ryan);
+addTeam(colt);
+ 
+console.log(devMountainEmployees.length);
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
+function away(arr){
+  for(var i = 0; i < arr.length; i++) {
+  if(arr[i] === cahlan) {
+    arr.splice(i, 1);
+  }
+}
 
 
+return devMountainEmployees;
+}
+
+away(devMountainEmployees);
+
+console.log(devMountainEmployees.length);
+console.log(devMountainEmployees);
 
 
 //NEXT PROBLEM
@@ -311,7 +356,7 @@ of Data is to have an Array full of objects. */
 //Create an empty array called users.
 
   //Code Here
-
+var users = [];
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
 
@@ -324,7 +369,19 @@ var user1 = {
 };
 
 //Your Code Here
+var user2 = {
+    name: 'Todd',
+    email: 'todd@gmail.com',
+    password: 'qwerty,
+    username: 'bob_bob'
+};
 
+var user3 = {
+    name: 'Emily',
+    email: 'emily@gmail.com',
+    password: 'iLoveTodd',
+    username: 'ILoveLucy'
+};
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
 and those objects contain properties about the specific person you follow.*/
